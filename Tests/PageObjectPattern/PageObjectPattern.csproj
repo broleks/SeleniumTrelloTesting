@@ -63,11 +63,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PageObjectPattern\Objects\BaseObject\AbstractBaseObject.cs" />
+    <Compile Include="PageObjectPattern\Objects\Buttons\Button.cs" />
+    <Compile Include="PageObjectPattern\Objects\Fields\Input.cs" />
+    <Compile Include="PageObjectPattern\Objects\Forms\LoginForm.cs" />
+    <Compile Include="PageObjectPattern\Pages\BasePage\AbstractBasePage.cs" />
+    <Compile Include="PageObjectPattern\Pages\Login\LoginPageObjects.cs" />
+    <Compile Include="PageObjectPattern\Pages\Login\HomePageObjects.cs" />
+    <Compile Include="PageObjectPattern\Pages\Login\HomePage.cs" />
+    <Compile Include="PageObjectPattern\Pages\Login\LoginPage.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="PageObjectPattern\Helpers\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

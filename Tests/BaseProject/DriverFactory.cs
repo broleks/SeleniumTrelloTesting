@@ -2,6 +2,7 @@
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
+using System;
 
 namespace BaseProject
 {
@@ -22,6 +23,7 @@ namespace BaseProject
             {
                 case DriverType.Chrome:
                     driver = new ChromeDriver();
+                    driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
                     break;
                 case DriverType.Firefox:
                     driver = new FirefoxDriver();
