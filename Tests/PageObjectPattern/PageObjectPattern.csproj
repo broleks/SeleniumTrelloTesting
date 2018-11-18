@@ -67,7 +67,9 @@
     <Compile Include="PageObjectPattern\Objects\Buttons\Button.cs" />
     <Compile Include="PageObjectPattern\Objects\Fields\Input.cs" />
     <Compile Include="PageObjectPattern\Objects\Forms\LoginForm.cs" />
+    <Compile Include="PageObjectPattern\Objects\Hearder\Header.cs" />
     <Compile Include="PageObjectPattern\Pages\BasePage\AbstractBasePage.cs" />
+    <Compile Include="PageObjectPattern\Pages\Boards\Boards.cs" />
     <Compile Include="PageObjectPattern\Pages\Login\LoginPageObjects.cs" />
     <Compile Include="PageObjectPattern\Pages\Login\HomePageObjects.cs" />
     <Compile Include="PageObjectPattern\Pages\Login\HomePage.cs" />
@@ -80,6 +82,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="PageObjectPattern\Helpers\" />
+    <Folder Include="PageObjectPattern\Pages\Table\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

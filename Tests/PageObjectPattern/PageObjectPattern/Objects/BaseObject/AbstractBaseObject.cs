@@ -67,7 +67,7 @@ namespace PageObjectPattern.PageObjectPattern.Objects
             element.SendKeys(text);
         }
 
-        public void Submit()
+        public virtual void Submit()
         {
             element.Submit();
         }
