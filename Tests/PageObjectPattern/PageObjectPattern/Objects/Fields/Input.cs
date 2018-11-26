@@ -12,9 +12,9 @@ namespace PageObjectPattern.PageObjectPattern.Objects
 
         public void ClickClearSendKeys(string text)
         {
-            element.Click();
-            element.Clear();
-            element.SendKeys(text);
+            base.Click();
+            base.Clear();
+            base.SendKeys(text);
         }
     }
 }

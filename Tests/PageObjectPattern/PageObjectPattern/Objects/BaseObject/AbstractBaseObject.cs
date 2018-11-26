@@ -1,38 +1,40 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.Drawing;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Internal;
+using OpenQA.Selenium.Support.UI;
 
 namespace PageObjectPattern.PageObjectPattern.Objects
 {
-    public abstract class AbstractBaseObject : IWebElement
+    public abstract class AbstractBaseObject
     {
         IWebElement element;
-        public AbstractBaseObject(IWebElement element)
+        protected AbstractBaseObject(IWebElement element)
         {
             this.element = element;
         }
 
-        public string TagName => element.TagName;
+        protected string TagName => element.TagName;
 
-        public string Text => element.Text;
+        protected string Text => element.Text;
 
-        public bool Enabled => element.Enabled;
+        protected bool Enabled => element.Enabled;
 
-        public bool Selected => element.Selected;
+        protected bool Selected => element.Selected;
 
-        public Point Location => element.Location;
+        protected Point Location => element.Location;
 
-        public Size Size => element.Size;
+        protected Size Size => element.Size;
 
-        public bool Displayed => element.Displayed;
+        protected bool Displayed => element.Displayed;
 
-        public void Clear()
+        protected void Clear()
         {
             element.Clear();
         }
 
-        public void Click()
+        protected void Click()
         {
             element.Click();
         }
@@ -47,34 +49,39 @@ namespace PageObjectPattern.PageObjectPattern.Objects
             return element.FindElements(by);
         }
 
-        public string GetAttribute(string attributeName)
+        protected string GetAttribute(string attributeName)
         {
             return element.GetAttribute(attributeName);
         }
 
-        public string GetCssValue(string propertyName)
+        protected string GetCssValue(string propertyName)
         {
             return element.GetCssValue(propertyName);
         }
 
-        public string GetProperty(string propertyName)
+        protected string GetProperty(string propertyName)
         {
             return element.GetProperty(propertyName);
         }
 
-        public void SendKeys(string text)
+        protected void SendKeys(string text)
         {
             element.SendKeys(text);
         }
 
-        public virtual void Submit()
+        protected void Submit()
         {
             element.Submit();
         }
 
-        public IWebDriver GetWebDriverFromElement()
+        protected IWebDriver GetWebDriverFromElement()
         {
             return ((IWrapsDriver)element).WrappedDriver;
+        }
+
+        protected void WaitElementClickable()
+        {
+            new WebDriverWait(GetWebDriverFromElement(), TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable(element));
         }
        
     }

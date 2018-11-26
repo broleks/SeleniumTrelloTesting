@@ -10,12 +10,16 @@ namespace Tests
         [Test]
         public void TestMethod1()
         {
-            Boards boards = new Boards(Driver);
-            boards.Header.HomeButton.Click();
-            boards.Header.SearchInput.ClickClearSendKeys("Trello");
-            boards.Header.PlusButton.Click();
-            boards.Header.InfoButton.Click();
-            boards.Header.UserButton.Click();
+            BoardsPage boardsPage = new BoardsPage(Driver);
+            //Check boards number is correct
+            boardsPage.AsserBoardListNumber(1);
+            //Add nwe board
+            boardsPage.BoardAdd.Click();
+
+            boardsPage.AddBoardForm.InputName("Tablica publiczna 1");
+            boardsPage.AddBoardForm.SubmitForm();
+            boardsPage.AsserBoardListNumber(2);
+
         }
         [Test]
         public void TestMethod2()

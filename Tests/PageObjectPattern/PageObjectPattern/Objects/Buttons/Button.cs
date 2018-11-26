@@ -9,5 +9,10 @@ namespace PageObjectPattern.PageObjectPattern.Objects
         {
             this.element = element;
         }
+
+        public void Click()
+        {
+            base.Click();
+        }
     }
 }

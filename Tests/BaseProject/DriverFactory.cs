@@ -43,6 +43,6 @@ namespace BaseProject
     {
         Chrome = 0,
         Firefox = 1,
-        InternetExplorer = 2
+        InternetExplorer = 2,  
     }
 }
